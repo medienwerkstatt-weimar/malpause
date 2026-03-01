@@ -56,7 +56,17 @@
   <main>
     <section id="malpause" class="content-block">
       <figure class="content-block__media">
-        <img src="hero.png" alt="Kunstmaterialien im Atelier" loading="lazy">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="hero-768.avif 768w, hero-1280.avif 1280w, hero-1920.avif 1920w"
+            sizes="(min-width: 768px) 62vw, 100vw">
+          <source
+            type="image/webp"
+            srcset="hero-768.webp 768w, hero-1280.webp 1280w, hero-1920.webp 1920w"
+            sizes="(min-width: 768px) 62vw, 100vw">
+          <img src="hero-1280.webp" alt="Kunstmaterialien im Atelier" loading="lazy" decoding="async">
+        </picture>
       </figure>
       <div class="content-block__text">
         <p class="eyebrow">Malpause</p>
