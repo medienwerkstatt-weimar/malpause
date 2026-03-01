@@ -16,8 +16,8 @@
   const mobileBreakpoint = window.matchMedia("(max-width: 900px)");
   const showTitleDelay = 1000;
   const showLinksStartDelay = 2680;
-  const showLinksStagger = 430;
-  const pauseBeforeSignature = 1030;
+  const showLinksStagger = 700;
+  const pauseBeforeSignature = 850;
   const showSignatureDelay = showLinksStartDelay + showLinksStagger * 3 + pauseBeforeSignature;
   const navRevealDelay = showSignatureDelay + 1500;
 
