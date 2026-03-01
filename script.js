@@ -15,11 +15,11 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const mobileBreakpoint = window.matchMedia("(max-width: 900px)");
   const showTitleDelay = 1000;
-  const showLinksStartDelay = 2500;
-  const showLinksStagger = 370;
-  const pauseBeforeSignature = 900;
+  const showLinksStartDelay = 2680;
+  const showLinksStagger = 430;
+  const pauseBeforeSignature = 1030;
   const showSignatureDelay = showLinksStartDelay + showLinksStagger * 3 + pauseBeforeSignature;
-  const navRevealDelay = showSignatureDelay + 650;
+  const navRevealDelay = showSignatureDelay + 1500;
 
   const interactionEvents = ["scroll", "wheel", "touchstart", "keydown", "mousedown"];
   let navRevealed = false;

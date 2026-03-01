@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #f7f4ef;
   --paper: #fffdfa;
   --ink: #111111;
@@ -118,7 +118,7 @@ img {
   text-underline-offset: 0.18em;
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.34s ease, transform 0.34s ease, color 0.2s ease;
+  transition: opacity 0.72s ease, transform 0.72s ease, color 0.2s ease;
 }
 
 .hero__link.is-visible {
@@ -144,7 +144,7 @@ img {
   opacity: 0;
   transform: translateY(8px) rotate(-5deg);
   transform-origin: left center;
-  transition: opacity 0.45s ease, transform 0.45s ease, color 0.2s ease;
+  transition: opacity 0.92s ease, transform 0.92s ease, color 0.2s ease;
 }
 
 .hero__signature::after {
@@ -156,7 +156,7 @@ img {
   border-bottom: 2px solid rgba(255, 216, 182, 0.95);
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 0.55s ease;
+  transition: transform 1.05s ease;
 }
 
 .hero__signature.is-visible {
