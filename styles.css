@@ -741,6 +741,41 @@ h2 {
   }
 }
 
+@media (hover: none) and (pointer: coarse) and (orientation: landscape) and (max-height: 560px) {
+  .hero {
+    height: 100dvh;
+  }
+
+  .hero__content {
+    top: calc(50% + 1.75rem);
+    transform: translate(-50%, -50%);
+    width: min(94vw, 760px);
+    padding-top: clamp(0.35rem, 1.5vh, 0.85rem);
+    padding-bottom: 0.6rem;
+    max-height: calc(100dvh - 3.5rem);
+  }
+
+  .hero__title {
+    font-size: clamp(1.8rem, 6.5vw, 3.2rem);
+    line-height: 1.05;
+  }
+
+  .hero__links {
+    margin-top: 0.65rem;
+    gap: 0.22rem;
+  }
+
+  .hero__link {
+    font-size: clamp(0.98rem, 2.8vw, 1.35rem);
+    line-height: 1.25;
+  }
+
+  .hero__signature {
+    margin-top: 1.08rem;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
