@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #f7f4ef;
   --paper: #fffdfa;
   --ink: #111111;
@@ -107,7 +107,7 @@ img {
 
 .hero__link {
   font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(1.15rem, 4.2vw, 2rem);
+  font-size: clamp(1.22rem, 4.2vw, 2.05rem);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.4;
@@ -135,7 +135,7 @@ img {
   margin-top: 4.4rem;
   position: relative;
   font-family: "Caveat", "Satisfy", "Great Vibes", "Brush Script MT", cursive;
-  font-size: clamp(1.45rem, 5.2vw, 2.5rem);
+  font-size: clamp(1.55rem, 5.2vw, 2.55rem);
   font-weight: 500;
   letter-spacing: 0.02em;
   line-height: 1.15;
@@ -157,6 +157,7 @@ img {
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 1.05s ease;
+  transition-delay: 0.18s;
 }
 
 .hero__signature.is-visible {
@@ -358,6 +359,7 @@ img {
   min-height: 100%;
   display: grid;
   grid-template-rows: 1fr auto;
+  touch-action: pan-y;
 }
 
 .offer-carousel__slide {

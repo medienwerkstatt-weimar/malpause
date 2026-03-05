@@ -40,12 +40,19 @@
 
   const initOfferCarousels = () => {
     const carousels = document.querySelectorAll("[data-carousel]");
+    const swipeThreshold = 45;
+    const verticalTolerance = 30;
 
     carousels.forEach((carousel) => {
       const slides = Array.from(carousel.querySelectorAll(".offer-carousel__slide"));
       const dots = Array.from(carousel.querySelectorAll(".offer-carousel__dot"));
       const prevBtn = carousel.querySelector("[data-carousel-prev]");
       const nextBtn = carousel.querySelector("[data-carousel-next]");
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchEndX = 0;
+      let touchEndY = 0;
+      let trackingTouch = false;
 
       if (!slides.length || !prevBtn || !nextBtn) {
         return;
@@ -81,6 +88,69 @@
           render();
         });
       });
+
+      carousel.addEventListener(
+        "touchstart",
+        (event) => {
+          if (!event.touches.length) {
+            return;
+          }
+          const touch = event.touches[0];
+          touchStartX = touch.clientX;
+          touchStartY = touch.clientY;
+          touchEndX = touch.clientX;
+          touchEndY = touch.clientY;
+          trackingTouch = true;
+        },
+        { passive: true },
+      );
+
+      carousel.addEventListener(
+        "touchmove",
+        (event) => {
+          if (!trackingTouch || !event.touches.length) {
+            return;
+          }
+          const touch = event.touches[0];
+          touchEndX = touch.clientX;
+          touchEndY = touch.clientY;
+        },
+        { passive: true },
+      );
+
+      carousel.addEventListener(
+        "touchend",
+        () => {
+          if (!trackingTouch) {
+            return;
+          }
+
+          const deltaX = touchEndX - touchStartX;
+          const deltaY = touchEndY - touchStartY;
+          const horizontalSwipe = Math.abs(deltaX) >= swipeThreshold;
+          const mostlyHorizontal = Math.abs(deltaX) > Math.abs(deltaY) + verticalTolerance;
+
+          if (horizontalSwipe && mostlyHorizontal) {
+            if (deltaX < 0) {
+              active = (active + 1) % slides.length;
+            } else {
+              active = (active - 1 + slides.length) % slides.length;
+            }
+            render();
+          }
+
+          trackingTouch = false;
+        },
+        { passive: true },
+      );
+
+      carousel.addEventListener(
+        "touchcancel",
+        () => {
+          trackingTouch = false;
+        },
+        { passive: true },
+      );
 
       render();
     });
