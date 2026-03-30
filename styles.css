@@ -7,7 +7,7 @@
   --nav-bg: rgba(247, 244, 239, 0.95);
   --shadow: 0 12px 30px rgba(14, 17, 23, 0.09);
   --radius: 10px;
-  --maxw: 1100px;
+  --maxw: 1280px;
 }
 
 * {
@@ -112,10 +112,7 @@ img {
   letter-spacing: 0.01em;
   line-height: 1.4;
   color: #ffe2c8;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-decoration-color: rgba(255, 226, 200, 0.75);
-  text-underline-offset: 0.18em;
+  text-decoration: none;
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.72s ease, transform 0.72s ease, color 0.2s ease;
@@ -672,7 +669,7 @@ h2 {
 
 @media (min-width: 1024px) {
   .hero {
-    height: 90svh;
+    height: 100svh;
   }
 
   .site-nav__inner {
