@@ -78,7 +78,7 @@ img {
   position: static;
   margin: 0;
   font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(2.2rem, 10vw, 6rem);
+  font-size: clamp(2.6rem, 13vw, 6rem);
   font-weight: 500;
   letter-spacing: 0.05em;
   color: #f9efe4;
@@ -338,8 +338,19 @@ img {
   margin: 0 0 0.45rem;
 }
 
+.term-card__when {
+  margin-top: 0.8rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid rgba(226, 135, 67, 0.25);
+}
+
+.term-card p.term-card__cta {
+  margin-top: 1rem;
+}
+
 .term-link {
   color: #111111;
+  font-weight: 700;
   text-decoration: underline;
   text-decoration-color: var(--accent);
   text-decoration-thickness: 2px;
@@ -602,6 +613,7 @@ h2 {
 
 .site-footer a {
   color: #f3ddc7;
+  text-decoration: none;
 }
 
 .contact-list {
@@ -635,6 +647,8 @@ h2 {
 .site-footer a:hover,
 .site-footer a:focus-visible {
   color: #ffe9d4;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 @media (min-width: 768px) {

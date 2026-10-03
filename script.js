@@ -14,11 +14,14 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const mobileBreakpoint = window.matchMedia("(max-width: 900px)");
-  const showTitleDelay = 1000;
-  const showLinksStartDelay = 2680;
-  const showLinksStagger = 700;
-  const pauseBeforeSignature = 850;
-  const showSignatureDelay = showLinksStartDelay + showLinksStagger * 3 + pauseBeforeSignature;
+  const showTitleDelay = 600;
+  const showLinksStartDelay = 1700;
+  const showLinksStagger = 450;
+  const linkFadeDuration = 720; // matches .hero__link transition
+  const pauseBeforeSignature = 250;
+  // signature starts once the last hero link has fully faded in
+  const showSignatureDelay =
+    showLinksStartDelay + showLinksStagger * 2 + linkFadeDuration + pauseBeforeSignature;
   const navRevealDelay = showSignatureDelay + 1500;
 
   const interactionEvents = ["scroll", "wheel", "touchstart", "keydown", "mousedown"];
