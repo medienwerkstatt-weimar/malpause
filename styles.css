@@ -908,6 +908,10 @@ h2 {
   font-size: clamp(1.2rem, 2.6vw, 1.55rem);
 }
 
+.subpage-copy .eyebrow + h2 {
+  margin-top: 0;
+}
+
 .subpage-copy a {
   color: var(--ink);
   text-decoration-color: var(--accent);
