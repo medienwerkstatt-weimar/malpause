@@ -344,6 +344,10 @@ img {
   border-top: 1px solid rgba(226, 135, 67, 0.25);
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .term-card p.term-card__cta {
   margin-top: 1rem;
 }
