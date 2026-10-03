@@ -797,3 +797,136 @@ h2 {
     transform: scaleX(1);
   }
 }
+
+/* Impressum */
+
+.subpage-title {
+  margin: 0 0 0.55rem;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(1.75rem, 5.2vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.subpage-header {
+  position: sticky;
+  top: 0;
+  z-index: 25;
+  backdrop-filter: blur(8px);
+  background: var(--nav-bg);
+  border-bottom: 1px solid rgba(31, 42, 53, 0.12);
+}
+
+.subpage-header__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0.7rem 1.15rem;
+  display: grid;
+  grid-template-columns: 2.45rem 1fr 2.45rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subpage-back {
+  grid-column: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  text-decoration: none;
+  width: 2.45rem;
+  height: 2.45rem;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(226, 135, 67, 0.12);
+}
+
+.subpage-back:hover,
+.subpage-back:focus-visible {
+  background: rgba(226, 135, 67, 0.22);
+}
+
+.subpage-back__icon {
+  width: 1rem;
+  height: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-0.5px);
+}
+
+.subpage-back__icon span {
+  display: none;
+}
+
+.subpage-back__icon::before {
+  content: "\2190";
+  font-size: 1.05rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.subpage-header__eyebrow {
+  grid-column: 2;
+  justify-self: center;
+  margin: 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.subpage-main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.3rem 1.15rem 3.4rem;
+}
+
+.subpage-main .content-block {
+  margin-bottom: 1.25rem;
+}
+
+.subpage-panel {
+  background: color-mix(in srgb, var(--paper) 92%, white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.15rem 1.05rem;
+}
+
+.subpage-panel h2 {
+  margin-bottom: 0.65rem;
+}
+
+.subpage-panel p {
+  margin: 0 0 0.62rem;
+}
+
+.subpage-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.subpage-copy h2 {
+  margin-top: 1.4rem;
+  font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+}
+
+.subpage-copy a {
+  color: var(--ink);
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.15em;
+  overflow-wrap: anywhere;
+}
+
+.subpage-copy ul {
+  margin: 0.3rem 0 0.9rem;
+  padding-left: 1.2rem;
+}
+
+
+.subpage-panel + .subpage-panel {
+  margin-top: 1.35rem;
+}
+
+.site-footer__legal {
+  margin-top: 2.4rem !important;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
