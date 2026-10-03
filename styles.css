@@ -4,6 +4,7 @@
   --ink: #111111;
   --muted: #3a3a3a;
   --accent: #e28743;
+  --accent-text: #ad5a22;
   --nav-bg: rgba(247, 244, 239, 0.95);
   --shadow: 0 12px 30px rgba(14, 17, 23, 0.09);
   --radius: 10px;
@@ -198,7 +199,7 @@ img {
   justify-content: space-between;
   align-items: center;
   gap: 0.8rem;
-  padding: 0.6rem 0.75rem;
+  padding: 0.6rem 1.15rem;
 }
 
 .site-nav__brand {
@@ -207,6 +208,7 @@ img {
   letter-spacing: 0.03em;
   font-weight: 500;
   flex: 0 0 auto;
+  margin-left: -0.95rem;
 }
 
 .site-nav__toggle {
@@ -321,13 +323,14 @@ img {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .term-card h3 {
   margin: 0 0 0.55rem;
   font-family: "DM Serif Display", Georgia, serif;
   font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+  font-weight: 400;
   line-height: 1.2;
 }
 
@@ -520,7 +523,8 @@ main section[id] {
   height: 100%;
   max-width: none;
   margin: 0;
-  aspect-ratio: auto;
+  /* reserve space before the lazy image loads, so jumps to #kontakt land correctly */
+  aspect-ratio: auto 683 / 1024;
   object-fit: cover;
   object-position: center top;
   border-radius: 0;
@@ -536,6 +540,7 @@ main section[id] {
 
 .content-block__text p {
   margin: 0 0 0.85rem;
+  max-width: 38em;
 }
 
 .content-block__text p:last-child {
@@ -547,7 +552,7 @@ main section[id] {
   font-size: 0.82rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 700;
 }
 
@@ -562,8 +567,11 @@ h2 {
 .site-footer {
   background: linear-gradient(155deg, #1c1a18, #2a2622 45%, #1f1d1a);
   color: #f0ece7;
-  padding: 3.2rem 1.15rem;
-  min-height: 92svh;
+  padding: 3.2rem 0 1.4rem;
+  /* fills the viewport below #kontakt's scroll-margin so the nav link lands cleanly */
+  min-height: calc(100svh - 6.2rem);
+  display: flex;
+  flex-direction: column;
 }
 
 #kontakt {
@@ -571,8 +579,13 @@ h2 {
 }
 
 .site-footer__inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   max-width: var(--maxw);
   margin: 0 auto;
+  padding: 0 1.15rem;
 }
 
 .site-footer .eyebrow {
@@ -594,7 +607,7 @@ h2 {
 .contact-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 2.5rem;
   display: grid;
   gap: 0.65rem;
 }
@@ -930,7 +943,17 @@ h2 {
 }
 
 .site-footer__legal {
-  margin-top: 2.4rem !important;
-  font-size: 0.9rem;
-  opacity: 0.8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4rem 1.5rem;
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(240, 236, 231, 0.14);
+  font-size: 0.85rem;
+  color: rgba(240, 236, 231, 0.6);
+}
+
+.site-footer__legal a {
+  color: inherit;
 }
